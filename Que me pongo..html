@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Como me puedo vestir hoy</title>
+</head>
+<body>
+	<h1>responder con sinceridad uwu</h1>
+	<div id="preguntas">
+		<p>¿Eres mujer o varón?</p>
+		<input type="radio" id="respuesta1" name="respuesta" value="mujer">
+		<label for="respuesta1">Mujer</label>
+        <input type="radio" id="respuesta1" name="respuesta" value="varon">
+        <label for="respuesta2" >Varon</label><br>
+		<p>¿Qué actividad realizarás el día de hoy?</p>
+		<input type="text" id="respuesta3" name="respuesta"><br>
+		<p>¿Estás en verano?</p>
+		<input type="radio" id="respuesta4" name="respuesta" value="si">
+		<label for="respuesta4">Sí</label>
+		<input type="radio" id="respuesta5" name="respuesta" value="no">
+		<label for="respuesta5">No</label><br>
+		<p>¿Qué color de ropa te gusta llevar en verano?</p>
+		<input type="checkbox" id="respuesta6" name="respuesta" value="rojo">
+		<label for="respuesta6">Rojo</label>
+		<input type="checkbox" id="respuesta7" name="respuesta" value="naranja">
+		<label for="respuesta7">Naranja</label><br>
+		<p>¿Te gustan los sombreros?</p>
+		<select id="respuesta8" name="respuesta">
+			<option value="si">Sí</option>
+			<option value="no">No</option>
+		</select><br>
+	</div>
+	<button onclick="mostrarRespuestas()">Enviar</button>
+	<div id="resultado" style="display:none;">
+		<h2>Resultado:</h2>
+		<p id="pregunta1"></p>
+		<p id="pregunta2"></p>
+		<p id="pregunta3"></p>
+		<p id="pregunta4"></p>
+		<p id="pregunta5"></p>
+		<p id="pregunta6"></p>
+		<p id="pregunta7"></p>
+        <p id="pregunta8"></p>
+		<img src="c:\Users\CSD_ADMINTRACION\Documents\pagina de ventas clone\Imageness\WhatsApp Image 2024-01-22 at 10.12.33 AM.jpeg" width="350" height="300"/>
+		<p id="texto">Hoy te puedes vestir con este tipo de ropa <span id="color"></span> para <span id="sombrero"></span> ir a la playa<span id="actividad"></span>.</p>
+	</div>
+	<script>
+		function mostrarRespuestas() {
+			document.getElementById("resultado").style.display = "block";
+			document.getElementById("preguntas").style.display = "none";
+			document.getElementById("pregunta1").innerText = "Respuesta a la pregunta 1: " + document.querySelector('input[name="respuesta"]:checked').value;
+            document.getElementById("pregunta1").innerText = "Respuesta a la pregunta 2: " + document.querySelector('input[name="respuesta"]:checked').value;
+			document.getElementById("pregunta2").innerText = "Respuesta a la pregunta 3: " + document.getElementById("respuesta2").value;
+			document.getElementById("pregunta3").innerText = "Respuesta a la pregunta 4: " + document.querySelector('input[name="respuesta"]:checked').value;
+			document.getElementById("pregunta4").innerText = "Respuesta a la pregunta 5: " + document.querySelector('input[name="respuesta"]:checked').value;
+			document.getElementById("pregunta5").innerText = "Respuesta a la pregunta 6: " + document.querySelector('input[name="respuesta"]:checked').value;
+			document.getElementById("pregunta6").innerText = "Respuesta a la pregunta 7: " + document.querySelectorAll('input[name="respuesta"]:checked').length + " opciones seleccionadas";
+			document.getElementById("pregunta7").innerText = "Respuesta a la pregunta : " + document.getElementById("respuesta7").value;
+			document.getElementById("color").innerText = document.querySelector('input[name="respuesta"]:checked').value == "mujer" ? "rojo y naranja" : "ninguno";
+			document.getElementById("sombrero").innerText = document.querySelector('input[name="respuesta"]:checked').value == "si" ? "sí" : "no";
+			document.getElementById("actividad").innerText = document.getElementById("respuesta2").value;
+		}
+	</script>
+</body>
+</html>
